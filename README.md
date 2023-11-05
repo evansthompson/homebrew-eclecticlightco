@@ -1,8 +1,13 @@
-# The Pourhouse
+# Getting Up To Date
 
-[![Build Status](https://travis-ci.com/sticklerm3/homebrew-pourhouse.svg?branch=master)](https://travis-ci.com/sticklerm3/homebrew-pourhouse)
+The original tap wasn't being updated, and Howard Oakley continues to update his apps as well as create new ones, and occasionally deprecates some. I plan on eventually getting the tap current with the [Downloads](https://eclecticlight.co/downloads/) section as well as update based on the [Updates RSS feed](https://eclecticlight.co/2019/08/13/how-to-get-news-on-apples-latest-updates-and-updates-to-my-apps/).
 
-Welcome to my pourhouse! This is my tap for some casks I wanted to automate the installation of. So far, I just have a hand-full completed and they're all from Howard Oakley over at [Eclectic Light Co.][6f8d9867] in the [Downloads][02b6cdf0] section. There is a list below of the currently enabled applications and it’s corresponding `token`.
+# The Tap
+Howard Oakley at [EclecticLightCo](https://eclecticlight.co/) has a fantastic array of utilities for macOS. Most of them do have the ability to check for updates, but not all of them. They also don't use the [Sparkle framework](https://sparkle-project.org/) for updating, so it's more labor-intensive and a little bit of a hassle to update compared to the majority of apps for macOS.
+
+Matthew Stickler had a tap [sticklerm3/pourhouse](https://github.com/sticklerm3/homebrew-pourhouse), which was a great start, but it hasn't been updated in over 3 years.
+
+At the moment, this README doesn't have the current Homebrew syntax, but one thing at a time...
 
 ## Getting Started
 
@@ -15,20 +20,22 @@ First you need Homebrew installed if you don’t already. To install open Termin
 Verify everything installed correctly by running `brew doctor` then you can add my tap by running:
 
 ```bash
-brew tap sticklerm3/pourhouse
+brew tap evansthompson/homebrew-eclecticlightco
 ```
 
-This creates a shallow clone of `sticklerm3/pourhouse` to `$(brew --repo)/Library/Taps/sticklerm3/pourhouse`.
+This creates a shallow clone of `evansthompson/homebrew-eclecticlightco` to `$(brew --repo)/Library/Taps/evansthompson/homebrew-eclecticlightco`.
 
-Then, you can continue to use `brew cask install <formula>` for anything unless for some reason theres another cask with the same name, simply identify the tap before the formula: `brew cask install sticklerm3/pourhouse/<formula>`
+Then, you can continue to use `brew cask install <formula>` for anything unless for some reason there’s another cask with the same name, simply identify the tap before the formula: `brew install --cask evansthompson/homebrew-eclecticlightco/<formula>`
 
 Or install via URL (which will not receive updates):
 
 ```bash
-brew cask install https://raw.githubusercontent.com/Sticklerm3/homebrew-pourhouse/master/Casks/<formula>.rb
+brew cask install https://raw.githubusercontent.com/evansthompson/homebrew-eclecticlightco/master/Casks/<formula>.rb
 ```
 
 ## List of Casks
+
+**NOTE**: This is VERY outdated. Look at the [Official Downloads](https://eclecticlight.co/downloads/) page until it's updated.
 
 ### High Sierra & Later
 
@@ -48,7 +55,7 @@ brew cask install https://raw.githubusercontent.com/Sticklerm3/homebrew-pourhous
 | :------------: | :----: | :-----: | :-------------- |
 |  Consolation2  |   2.4  |  Sierra | `consolation2`  |
 |  Dispatch View |   1.0  |  Sierra | `dispatchview`  |
-| Keychain Check |   1.3  |  Sierra | `keychaincheck` |
+|  Keychain Check |   1.3  |  Sierra | `keychaincheck` |
 |    WoodPile    |  1.0b6 |  Sierra | `woodpile`      |
 
 ### Sierra and up
@@ -111,14 +118,6 @@ I’m still newer at writing formula/Ruby so bear with me here. The following ar
 ## Advanced Usage
 
 Update homebrew with `brew update`. Upgrade any updated formula and casks with `brew cask upgrade`.
-
-If you frequently use the command line, it may be useful to create an alias for  `brew cask`. Add the following to your `.bashrc`, `.profile`, `.zshrc` or wherever you keep your aliases for your shell:
-
-```bash
-alias cask='brew cask'
-```
-
-I have my own plugin for zsh of useful `brew` and  `brew cask` aliases which can be found at [sticklerm3/alehouse][80447341]. See the projects Readme for installation and usage.
 
 For more information on using the brew command run `brew help` or `man brew` or check [Homebrew's documentation][223b9045].
 
